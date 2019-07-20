@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+
+  sudo: yes
+
+  tasks:
+
+    - name: Changing Screensaver lockout timer for 5 Mins
+
+      command: "{{ item }}"
+
+      with_items :
+
+       - gsettings set org.gnome.desktop.screensaver lock-delay 300
